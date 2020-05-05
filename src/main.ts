@@ -22,14 +22,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import { BaseCoder} from "./base-coder"
 
 //TODO(AR) finish implementing command line tool, simple example follows...
-let hex: Array<String> = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+const hex: Array<String> = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
 
-let input = 1234567
+const input = 1234567
 console.log(`input=${input}`)
 
-let encoded = BaseCoder.encode(input, 16)
-let encodedStr = encoded.map(i => { return hex[i] }).join('')
+const encoded = BaseCoder.encode(input, 16)
+const encodedStr = encoded.map(i => { return hex[i] }).join('')
 console.log(`encoded(hex)=${encodedStr}`)
 
-let decoded = BaseCoder.decode(encodedStr, 16, character => { return hex.indexOf(character) })
+const decoded = BaseCoder.decode(encodedStr, 16, character => { return hex.indexOf(character) })
 console.log(`decoded(int)=${decoded}`)
